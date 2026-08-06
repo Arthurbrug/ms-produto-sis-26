@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-public class ProdutoDTO {
+public class ProdutoResponseDTO {
 
     private Long id;
 
@@ -29,14 +29,14 @@ public class ProdutoDTO {
     private Double valor;
 
     @NotNull(message = "Campo categoria requerido")
-    private CategoriaDto categoria;
+    private CategoriaResponseDto categoria;
 
-    public ProdutoDTO(Produto produto) {
+    public ProdutoResponseDTO(Produto produto) {
         id = produto.getId();
         nome = produto.getNome();
         descricao = produto.getDescricao();
         valor = produto.getValor();
 
-        categoria = new CategoriaDto(produto.getCategoria());
+        categoria = new CategoriaResponseDto(produto.getCategoria());
     }
 }
